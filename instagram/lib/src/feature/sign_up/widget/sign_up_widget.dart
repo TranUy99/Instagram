@@ -42,11 +42,11 @@ Widget buildTextField(
         border: Border.all(color: kBlackColor)),
     child: Row(
       children: [
-        Container(
-            width: 16,
-            height: 16,
-            margin: const EdgeInsets.only(left: 17),
-            child:  textType == "email" ? const Icon(Icons.person): const Icon(Icons.lock)),
+        // Container(
+        //     width: 16,
+        //     height: 16,
+        //     margin: const EdgeInsets.only(left: 17),
+        //     child:  textType == "email" ? const Icon(Icons.person): const Icon(Icons.lock)),
         Container(
           width: 260,
           height: 50,

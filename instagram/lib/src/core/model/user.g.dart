@@ -7,17 +7,19 @@ part of 'user.dart';
 // **************************************************************************
 
 UserDTO _$UserDTOFromJson(Map<String, dynamic> json) => UserDTO(
-      id: json['uid'] as int?,
+      id: json['uid'] as String?,
       gender: json['gender'] as int?,
       email: json['email'] as String?,
-      fullName: json['fullName'] as String?,
+      username: json['username'] as String?,
       birthday: json['birthDay'] as String?,
+      photoUrl: json['photoUrl'] as String?,
     );
 
 Map<String, dynamic> _$UserDTOToJson(UserDTO instance) => <String, dynamic>{
       'uid': instance.id,
       'gender': instance.gender,
       'email': instance.email,
-      'fullName': instance.fullName,
+      'username': instance.username,
       'birthDay': instance.birthday,
+      'photoUrl': instance.photoUrl,
     };

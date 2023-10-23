@@ -5,7 +5,7 @@ part 'user.g.dart';
 @JsonSerializable()
 class UserDTO {
   @JsonKey(name: 'uid')
-  final int? id;
+  final String? id;
 
   @JsonKey(name: 'gender')
   final int? gender;
@@ -13,21 +13,23 @@ class UserDTO {
   @JsonKey(name: 'email')
   final String? email;
 
-  @JsonKey(name: 'fullName')
-  final String? fullName;
+  @JsonKey(name: 'username')
+  final String? username;
 
   @JsonKey(name: 'birthDay')
   final String? birthday;
 
+  @JsonKey(name: 'photoUrl')
+  final String? photoUrl;
 
 
   UserDTO({
     this.id,
     this.gender,
     this.email,
-    this.fullName,
+    this.username,
     this.birthday,
-   
+   this.photoUrl
   
   });
 

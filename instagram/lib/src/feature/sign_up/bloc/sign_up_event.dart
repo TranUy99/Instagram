@@ -3,6 +3,10 @@ part of 'sign_up_bloc.dart';
 abstract class SignUpEvent {
   const SignUpEvent();
 }
+class FileEvent extends SignUpEvent {
+  final  Uint8List file;
+  const FileEvent({required this.file});
+}
 
 class EmailEvent extends SignUpEvent {
   final String email;
@@ -23,3 +27,4 @@ class BioEvent extends SignUpEvent {
   final String bio;
   const BioEvent({required this.bio});
 }
+
