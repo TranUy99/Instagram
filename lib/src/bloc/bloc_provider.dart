@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:instagram/src/feature/comment/cubit/comment_cubit.dart';
 import 'package:instagram/src/feature/login/bloc/login_bloc.dart';
 import 'package:instagram/src/feature/sign_up/bloc/sign_up_bloc.dart';
 
@@ -19,6 +20,16 @@ class AppBlocProvider {
         ),
         BlocProvider(
           create: (context) => PostNewBloc(),
+        ),
+
+        BlocProvider(
+          create: (context) => PostBloc(),
+        ),
+         BlocProvider(
+          create: (context) => PostIdBloc(),
+        ),
+          BlocProvider(
+          create: (context) => CommentCubit(),
         ),
       ];
 }

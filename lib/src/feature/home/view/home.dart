@@ -4,11 +4,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram/src/constant/utils/color.dart';
-
+import '../../../core/model/post.dart';
 import '../../../core/model/user.dart';
 import '../controller/user_repository .dart';
 import '../cubit/user_cubit.dart';
-import '../widget/home_widget.dart';
+import 'post_card.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -62,18 +62,15 @@ class _HomeState extends State<Home> {
               child: CircularProgressIndicator(),
             );
           }
-         
-          return ListView.builder(
-            itemCount: snapshot.data!.docs.length,
-            itemBuilder: (ctx, index) => Container(
-              margin: const EdgeInsets.symmetric(
-                vertical: 15,
-              ),
-              child: PostCard(
-                snap: snapshot.data!.docs[index].data(),
-              ),
-            ),
-          );
+
+          final posts = snapshot.data!.docs.map((document) {
+            final data = document.data() as Map<String, dynamic>;
+            return PostModel.fromMap(data);
+          }).toList();
+
+          context.read<PostBloc>().setPosts(posts);
+
+          return PostCard();
         },
       ),
     );
